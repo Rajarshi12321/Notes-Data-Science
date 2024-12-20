@@ -125,6 +125,7 @@ Subword tokenization breaks words into smaller units for language modeling and N
 - Rare words  
 - Morphologically rich languages  
 
+
 #### **Techniques:**
 
 ##### **a. Byte Pair Encoding (BPE)**  
@@ -143,17 +144,14 @@ For "lower, lowest":
 - Merge `low e r` → `lower`  
 - Merge `low e s t` → `lowest`
 
-<iframe
-  width="560"
-  height="315"
-  src="https://www.youtube.com/embed/tOMjTCO0htA?start=150&end=155&autoplay=1"
-  title="YouTube video"
-  frameborder="0"
-  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-  allowfullscreen>
-</iframe>
 
-[Watch the video from 2:30 to 2:35](https://www.youtube.com/watch?v=tOMjTCO0htA&start=150)
+
+
+
+https://github.com/user-attachments/assets/fba56916-42a8-499a-8814-90848366c82b
+
+
+[Read the BPE-Blog](https://huggingface.co/learn/nlp-course/en/chapter6/5)
 
 
 ---
@@ -165,6 +163,15 @@ For "lower, lowest":
 **Key Difference from BPE:**  
 - WordPiece optimizes for likelihood in a language model rather than raw frequency.  
 
+
+
+https://github.com/user-attachments/assets/6c3a6dc0-1afd-416e-b4a0-e12a961d65de
+
+[Read the WordPiece-Blog](https://huggingface.co/learn/nlp-course/en/chapter6/6?fw=pt)
+
+
+
+
 ---
 
 ##### **c. Unigram**
@@ -174,6 +181,15 @@ For "lower, lowest":
 **Example (Probabilistic Assignment):**  
 - "playing" → {"play", "ing"}, {"pl", "ay", "ing"}  
 - Chooses segmentation with the highest probability.  
+
+
+
+https://github.com/user-attachments/assets/727d0c8f-d6aa-497f-8c3f-58870299ac1b
+
+
+
+
+[Read the Unicode-Blog](https://huggingface.co/learn/nlp-course/en/chapter6/7?fw=pt)
 
 ---
 
