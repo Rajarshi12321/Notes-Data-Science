@@ -1,3 +1,4 @@
+## Regex and Patterns
 
 ### **1. Regex Rules:**
 **Regex** (Regular Expressions) is used for pattern matching in text.  
@@ -78,3 +79,120 @@ print(ps.stem("running"))  # Output: "run"
 - Understanding word forms is critical for NLP tasks like text normalization.
 
 --- 
+<br>
+<br>
+
+## Tokenization and Vocabulary growth size
+
+### **1. Heap’s Law and Herdan’s Law: Vocabulary Size Growth**
+---
+
+#### **Heap’s Law**  
+Heap’s Law describes the relationship between the size of a text corpus and the growth of its vocabulary.  
+
+The formula for Heap's Law is $V(n) = K \cdot n^\beta$, where:
+- $V(n)$ is the vocabulary size.
+- $n$ is the number of tokens.
+- $K$ and $\beta$ are constants.
+
+**Key Insight:**  
+- Vocabulary grows sub-linearly with the size of the corpus, meaning the rate of encountering new words decreases as text size increases.  
+
+---
+
+#### **Herdan’s Law**  
+Herdan’s Law is similar to Heap’s Law and states that the growth of vocabulary follows a power-law distribution. It is often used interchangeably with Heap’s Law, but the emphasis is on the mathematical foundation of vocabulary distribution in natural language.  
+
+---
+
+### **2. Clitics**
+Clitics are morphemes (smallest meaningful units) that cannot stand alone as independent words and attach to a host word.  
+
+**Examples:**  
+- **English:**  
+  - "I'm" → "I am" (clitic: "'m")  
+  - "They'll" → "They will" (clitic: "'ll")  
+- **French:**  
+  - "l'arbre" → "le arbre" (clitic: "l'")  
+
+**Note:**  
+Clitics differ from affixes (prefixes/suffixes) because they retain some syntactic independence.
+
+---
+
+### **3. Subword Tokenization**
+Subword tokenization breaks words into smaller units for language modeling and NLP tasks. This approach is particularly effective for handling:  
+- Rare words  
+- Morphologically rich languages  
+
+#### **Techniques:**
+
+##### **a. Byte Pair Encoding (BPE)**  
+- BPE iteratively merges frequent pairs of symbols (subwords or characters).  
+- Common in models like GPT and OpenAI's LLMs.  
+
+**Steps:**  
+1. Start with characters as individual units.  
+2. Merge the most frequent pair of symbols.  
+3. Repeat until a vocabulary limit is reached.  
+
+**Example:**  
+For "lower, lowest":  
+- Initial: `l o w e r, l o w e s t`  
+- Merge `l o w` → `low`  
+- Merge `low e r` → `lower`  
+- Merge `low e s t` → `lowest`
+
+<iframe
+  width="560"
+  height="315"
+  src="https://www.youtube.com/embed/tOMjTCO0htA?start=150&end=155&autoplay=1"
+  title="YouTube video"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowfullscreen>
+</iframe>
+
+[Watch the video from 2:30 to 2:35](https://www.youtube.com/watch?v=tOMjTCO0htA&start=150)
+
+
+---
+
+##### **b. WordPiece**
+- Similar to BPE but uses a probabilistic approach to merge subwords.  
+- Common in models like BERT.  
+
+**Key Difference from BPE:**  
+- WordPiece optimizes for likelihood in a language model rather than raw frequency.  
+
+---
+
+##### **c. Unigram**
+- A probabilistic subword segmentation method.  
+- Begins with a large vocabulary and removes the least likely subwords iteratively.  
+
+**Example (Probabilistic Assignment):**  
+- "playing" → {"play", "ing"}, {"pl", "ay", "ing"}  
+- Chooses segmentation with the highest probability.  
+
+---
+
+### **4. Morphene**
+A **morpheme** is the smallest grammatical unit in a language that carries meaning.  
+
+**Types of Morphemes:**  
+1. **Free Morphemes:** Can stand alone (e.g., "book", "run").  
+2. **Bound Morphemes:** Cannot stand alone (e.g., prefixes like "un-", suffixes like "-ing").  
+
+**Significance:**  
+- Morphological analysis is central to tokenization, especially in morphologically rich languages.
+
+---
+
+### **5. Recommended Resource:**  
+For more on BPE, WordPiece, and Unigram Tokenization:  
+- **Video:** [Byte Pair Encoding - YouTube](https://www.youtube.com/results?search_query=byte+pair+encoding)  
+
+Let me know if you'd like more examples or a deeper dive into any of these topics!
+
+
